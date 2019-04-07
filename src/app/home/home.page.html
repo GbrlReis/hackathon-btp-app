@@ -1,14 +1,111 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      GBP Terminais
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+<ion-content class="home-content">
+	<div class="progress">
+
+		<div class="row timeline">
+			<div class="col-50">
+				<ul id="progress">
+					<li><div class="divider"></div></li>
+			    <li>
+			    	<div class="node"></div>
+			    	<p>Seg 01 de Abril, 2019</p>
+			    	<br><span>Treinamento NR10 +100p</span>
+			    </li>
+			    <li><div class="divider"></div></li>
+			    <li>
+			    	<div class="node"></div>
+			    	<p>Ter 02 de Abril, 2019</p>
+			    	<br><span>Treinamento segurança +50p</span>
+			    </li>
+			    <li><div class="divider"></div></li>
+			    <li>
+			    	<div class="node"></div>
+			    	<p>Ter 03 de Abril, 2019</p>
+			    	<br><span>Treinamento OEA +100p</span>
+			    </li>
+			    <li><div class="divider"></div></li>
+				</ul>			
+			</div>
+			<div class="col-50">
+				<div class="progress-circle">
+					<round-progress
+			    [current]="200"
+			    [max]="500"
+			    [color]="'#1deaaf'"
+			    [background]="'#243443'"
+			    [radius]="75"
+			    [stroke]="5"
+			    [semicircle]="false"
+			    [rounded]="true"
+			    [clockwise]="true"
+			    [responsive]="false"
+			    [duration]="800"
+			    [animation]="'easeOutCubic'"
+			    [animationDelay]="0">
+			    </round-progress>
+			    <div class="progress-limit">
+			    	<span><strong>340</strong></span>/500 <br>
+			    	<div class="label">Pontos da semana</div>
+			    	<div class="total">Total <br><span>2560</span></div>
+			    </div>
+				</div>
+			</div>			
+		</div>
+
+	</div>
+
+	<div class="menu-list">
+		<div class='item' (click)="goToVideoLessons()">
+	  	<div class='icon'>
+	  		<ion-icon name="logo-youtube"></ion-icon>
+	  	</div>
+	  	<span class="vertical-hr"></span>
+	  	<div class='content'>
+  			<strong>Vídeo Aulas</strong>
+	    	<br><span>Assistir treinamentos</span>
+	  	</div>
+	  </div>
+	  <hr>
+	  <div class='item' (click)="goToCertificates()">
+	  	<div class='icon'>
+	  		<ion-icon name="school"></ion-icon>
+	  	</div>
+	  	<span class="vertical-hr"></span>
+	  	<div class='content'>
+  			<strong>Certificações</strong>
+	    	<br><span>Verifique a agenda de certificãções</span>
+	  	</div>
+	  </div>
+	  <hr>
+	  <div class='item' (click)="goToTrainings()">
+	  	<div class='icon'>
+	  		<ion-icon name="briefcase"></ion-icon>
+	  	</div>
+	  	<span class="vertical-hr"></span>
+	  	<div class='content'>
+  			<strong>Treinamentos</strong>
+	    	<br><span>Verifique os treinamentos disponíveis</span>
+	  	</div>
+	  </div>
+	  <hr>
+	  <!-- <div class='item'>
+	  	<div class='icon'>
+	  		<ion-icon name="alarm"></ion-icon>
+	  	</div>
+	  	<span class="vertical-hr"></span>
+	  	<div class='content'>
+  			<strong>Histórico de Atividades</strong>
+	    	<br><span>Verifique os treinamentos disponíveis</span>
+	  	</div>
+	  </div>
+	  <hr> -->
+	</div>
+
 </ion-content>
