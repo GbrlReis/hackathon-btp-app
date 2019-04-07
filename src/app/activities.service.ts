@@ -19,7 +19,7 @@ export class ActivitiesService {
   }
 
   getCertifications(){
-    return this.firestore.collection(this.firebaseDocumentName, ref => ref.where('value', '==', 'training'))
+    return this.firestore.collection(this.firebaseDocumentName, ref => ref.where('category', '==', 'certification'))
       .snapshotChanges()
       .pipe(
         map(certifications => certifications.map(this.mapCertification))
