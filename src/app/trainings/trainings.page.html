@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Treinamentos</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -28,12 +28,11 @@
 			<div class='content'>
 				<strong>{{ training.title }}</strong>
 				<br><span>{{ training.description }}</span>
-				<br><button ion-button outline>Participar</button>
+				<br><ion-button expand="block" fill="outline" color="dark">Participar</ion-button>
 			</div>
 		</div>
 		<hr>
-	</div>
-  
+	</div>  
 
 	<h4>Treinamentos passados</h4>
 	<div *ngFor="let training of pastTrainings">
