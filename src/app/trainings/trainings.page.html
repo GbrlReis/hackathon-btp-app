@@ -12,78 +12,46 @@
 
 <ion-content padding class="training-content">
 	<h4>Disponíveis</h4>
-	<div class='item'>
-  	<div class='icon'>
-  		<ion-icon name="calendar"></ion-icon><br>
-  		<span>
-  			06/04/19 <br>
-	  		100 pontos
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Treinamento primeiros socorros</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um extintor e realizar primeiros socorros</span>
-    	<br><button ion-button outline>Participar</button>
-  	</div>
-  </div>
-  <hr>
-  <div class='item'>
-  	<div class='icon'>
-  		<ion-icon name="calendar"></ion-icon><br>
-  		<span>
-  			05/04/19 <br>
-	  		100 pontos
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Treinamento primeiros socorros</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um extintor e realizar primeiros socorros</span>
-    	<br><button ion-button outline [disabled]="true">Inscrito</button>
-  	</div>
-  </div>
+	<div *ngFor="let training of nextTrainings">
+		<div class='item'>
+			<div class='icon'>
+				<ion-icon name="calendar"></ion-icon><br>
+				<span>
+					{{
+						training.date | date: 'dd/MM/yy'
+					}}
+					<br>
+					100 pontos
+				</span>
+			</div>
+			<span class="vertical-hr"></span>
+			<div class='content'>
+				<strong>{{ training.title }}</strong>
+				<br><span>{{ training.description }}</span>
+				<br><button ion-button outline>Participar</button>
+			</div>
+		</div>
+		<hr>
+	</div>
+  
 
-  <h4>Treinamentos concluidos</h4>
-	<div class='item past-trainings'>
-  	<div class='icon'>
-  		<ion-icon name="briefcase"></ion-icon><br>
-  		<span>
-  			02/04/19
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Treinamento teste</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um...</span>
-  	</div>
-  </div>
- 	<hr>
- 	<div class='item past-trainings'>
-  	<div class='icon'>
-  		<ion-icon name="briefcase"></ion-icon><br>
-  		<span>
-  			02/04/19
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Treinamento teste</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um...</span>
-  	</div>
-  </div>
-  <hr>
-  <div class='item past-trainings'>
-  	<div class='icon'>
-  		<ion-icon name="briefcase"></ion-icon><br>
-  		<span>
-  			02/04/19
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Treinamento teste</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um...</span>
-  	</div>
-  </div>
+	<h4>Treinamentos passados</h4>
+	<div *ngFor="let training of pastTrainings">
+		<div class='item past-trainings'>
+			<div class='icon'>
+				<ion-icon name="briefcase"></ion-icon><br>
+				<span>
+					{{
+						training.date | date: 'dd/MM/yy'
+					}}
+				</span>
+			</div>
+			<span class="vertical-hr"></span>
+			<div class='content'>
+				<strong>{{ training.title }}</strong>
+				<br><span>{{ training.description }}</span>
+			</div>
+		</div>
+		<hr>
+	</div>
 </ion-content>
