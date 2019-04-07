@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivitiesService } from '../activities.service'
+
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-trainings',
@@ -7,7 +10,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrainingsPage implements OnInit {
 
-  constructor() { }
+  nextTrainings:any = [];
+  pastTrainings:any = [];
+
+  constructor(private activitiesService: ActivitiesService) {
+    activitiesService.getTrainings()
+  		.subscribe((training) => {
+  			this.nextTrainings = training.filter(training => moment(training.date).toDate() >= moment().startOf('day').toDate());
+      })
+    
+    activitiesService.getTrainings()
+  		.subscribe((training) => {
+  			this.pastTrainings = training.filter(training => moment(training.date).isBefore(moment().startOf('day')));
+  		})
+  }
 
   ngOnInit() {
   }

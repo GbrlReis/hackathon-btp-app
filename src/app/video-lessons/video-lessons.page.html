@@ -38,7 +38,7 @@
 				<span class="vertical-hr"></span>
 				<div class='content'>
 					<strong>{{ videoLesson.title }}</strong>
-					<br><span>{{ videoLesson.description }}</span>
+					<br><span>{{ videoLesson.description.length >= 50 ? videoLesson.description.slice(0, 50) + '...' : videoLesson.description }}</span>
 				</div>
 			</div>
 			<hr>

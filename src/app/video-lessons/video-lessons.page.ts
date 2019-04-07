@@ -30,6 +30,7 @@ export class VideoLessonsPage implements OnInit {
     this.videoLessonUrl = videoLesson.link;
     this.videoLessonTitle = videoLesson.title;
     this.videoLessonDescription = videoLesson.description;
+    this.showVideoLessonDescription = true;
   }
 
   toggleVideoLessonDescription(){
