@@ -6,61 +6,41 @@
 
 <ion-content padding class="certificate-content">
 	<h4>Próximas certificações</h4>
-	<div class='item'>
+	<div class='item' *ngFor="let certification of nextCertifications">
   	<div class='icon'>
   		<ion-icon name="calendar"></ion-icon><br>
   		<span>
-  			06/04/19 <br>
-	  		23:44
+				{{
+					certification.date | date: 'dd/MM/yy'
+				}}
   		</span>
   	</div>
   	<span class="vertical-hr"></span>
   	<div class='content'>
-			<strong>Certificação OEA</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um...</span>
+			<strong>{{ certification.title }}</strong>
+    	<br><span>{{ certification.description }}</span>
   	</div>
   </div>
 
-  <h4>Certificações concluidas</h4>
-	<div class='item past-certificate'>
-  	<div class='icon'>
-  		<ion-icon name="school"></ion-icon><br>
-  		<span>
-  			02/04/19
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Certificação OHASS</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um...</span>
-  	</div>
-  </div>
- 	<hr>
- 	<div class='item past-certificate'>
-  	<div class='icon'>
-  		<ion-icon name="school"></ion-icon><br>
-  		<span>
-  			02/04/19
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Certificação OHASS</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um...</span>
-  	</div>
-  </div>
-  <hr>
-  <div class='item past-certificate'>
-  	<div class='icon'>
-  		<ion-icon name="school"></ion-icon><br>
-  		<span>
-  			02/04/19
-  		</span>
-  	</div>
-  	<span class="vertical-hr"></span>
-  	<div class='content'>
-			<strong>Certificação OHASS</strong>
-    	<br><span>Aprenda os procedimentos para utilizar um...</span>
-  	</div>
-  </div>
+	<h4>Certificações passadas</h4>
+	<div *ngFor="let certification of pastCertifications">	
+		<div class='item past-certificate'>
+			<div class='icon'>
+				<ion-icon name="school"></ion-icon><br>
+				<span>
+					{{
+						certification.date | date: 'dd/MM/yy'
+					}}
+				</span>
+			</div>
+			<span class="vertical-hr"></span>
+			<div class='content'>
+				<strong>{{ certification.title }}</strong>
+				<br><span>{{ certification.description }}</span>
+			</div>
+		</div>
+		<hr>
+	</div>
+ 	
+ 	
 </ion-content>
