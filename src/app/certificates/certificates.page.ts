@@ -17,13 +17,11 @@ export class CertificatesPage implements OnInit {
   constructor(private activitiesService: ActivitiesService) {
     activitiesService.getCertifications()
   		.subscribe((certifications) => {
-  			console.log('certifications', certifications);
   			this.nextCertifications = certifications.filter(certificate => moment(certificate.date).toDate() >= moment().startOf('day').toDate());
       })
     
     activitiesService.getCertifications()
   		.subscribe((certifications) => {
-  			console.log('certifications', certifications);
   			this.pastCertifications = certifications.filter(certificate => moment(certificate.date).isBefore(moment().startOf('day')));
   		})
 

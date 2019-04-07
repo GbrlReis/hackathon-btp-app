@@ -35,7 +35,7 @@ export class ActivitiesService {
   }
 
   getVideoLessons(){
-    return this.firestore.collection(this.firebaseDocumentName, ref => ref.where('value', '==', 'video'))
+    return this.firestore.collection(this.firebaseDocumentName, ref => ref.where('category', '==', 'video'))
       .snapshotChanges()
       .pipe(
         map(certifications => certifications.map(this.mapCertification))
