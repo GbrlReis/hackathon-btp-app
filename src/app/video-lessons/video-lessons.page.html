@@ -8,22 +8,23 @@
 
 <ion-content class="video-lessons-content">
 	<div class="progress">
-		<iframe width="100%" height="100%" [src]="sanitizer.bypassSecurityTrustResourceUrl(youtubeUrl)" frameborder="0" allowfullscreen></iframe>
+		<iframe width="100%" height="100%" [src]="sanitizer.bypassSecurityTrustResourceUrl(videoLessonUrl)" frameborder="0" allowfullscreen></iframe>
 	</div>
 
 	<div class="menu-list" style="position: absolute;  z-index: 9999; left: 15px;">
 		<div class="row menu-header">
 			<div class="col-md-33">
-				Treinamento de segurança 101
+				Treinamento e aprendizagem
 			</div>			
 			<div class="col-md-66">
 				<ion-icon name="star"></ion-icon>50
 			</div>
 		</div>
-		<h1>1. Politicas de segurança</h1>
-		<p>Treinamento realizado pelo colaborador, onde visa apresentar as políticas de segurança da empresa...</p>
-		<div class="center-icon">
-			<ion-icon name="arrow-down"></ion-icon>
+		<h1>{{ videoLessonTitle }}</h1>
+		<p [hidden]="!showVideoLessonDescription">{{ videoLessonDescription }}</p>
+		<div class="center-icon" (click)="toggleVideoLessonDescription()">
+			<ion-icon name="arrow-down" [hidden]="showVideoLessonDescription"></ion-icon>
+			<ion-icon name="arrow-up" [hidden]="!showVideoLessonDescription"></ion-icon>
 		</div>
 		<div *ngFor="let videoLesson of videoLessons">
 			<div class='item' (click)="selectVideoLesson(videoLesson)">

@@ -22,7 +22,7 @@ export class ActivitiesService {
     return this.firestore.collection(this.firebaseDocumentName, ref => ref.where('category', '==', 'certification'))
       .snapshotChanges()
       .pipe(
-        map(certifications => certifications.map(this.mapCertification))
+        map(certifications => certifications.map(this.mapActivity))
       )
   }
 
@@ -30,7 +30,7 @@ export class ActivitiesService {
     return this.firestore.collection(this.firebaseDocumentName, ref => ref.where('value', '==', 'training'))
       .snapshotChanges()
       .pipe(
-        map(certifications => certifications.map(this.mapCertification))
+        map(certifications => certifications.map(this.mapActivity))
       )
   }
 
@@ -38,16 +38,16 @@ export class ActivitiesService {
     return this.firestore.collection(this.firebaseDocumentName, ref => ref.where('category', '==', 'video'))
       .snapshotChanges()
       .pipe(
-        map(certifications => certifications.map(this.mapCertification))
+        map(certifications => certifications.map(this.mapActivity))
       )
   }
 
-  private mapCertification(certification){
-    console.log("q");
-    certification = certification.payload.doc || certification.payload;
+  private mapActivity(activity){
+    activity = activity.payload.doc || activity.payload;
+    console.log(activity.data())
     return {
-      ...certification.data(),
-      id: certification.id
+      ...activity.data(),
+      id: activity.id
     };
   }
 }

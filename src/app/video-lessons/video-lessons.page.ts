@@ -10,13 +10,16 @@ import { DomSanitizer } from '@angular/platform-browser';
 export class VideoLessonsPage implements OnInit {
 
   videoLessons:any = [];
-  youtubeUrl:string = 'https://www.youtube.com/embed/gsjy1hbyF_8';
+  videoLessonUrl:string = '';
+  videoLessonTitle:string = '';
+  videoLessonDescription:string = '';
+  showVideoLessonDescription:boolean = false;
 
   constructor(private activitiesService: ActivitiesService, public sanitizer: DomSanitizer) {
     activitiesService.getVideoLessons()
   		.subscribe((videoLessons) => {
-        console.log(videoLessons)
-  			this.videoLessons = videoLessons;
+        this.videoLessons = videoLessons;
+        this.selectVideoLesson(videoLessons[0]);
       })
   }
 
@@ -24,7 +27,13 @@ export class VideoLessonsPage implements OnInit {
   }
 
   selectVideoLesson(videoLesson){
-    this.youtubeUrl = videoLesson.link;
+    this.videoLessonUrl = videoLesson.link;
+    this.videoLessonTitle = videoLesson.title;
+    this.videoLessonDescription = videoLesson.description;
+  }
+
+  toggleVideoLessonDescription(){
+    this.showVideoLessonDescription = !this.showVideoLessonDescription;
   }
 
 }
