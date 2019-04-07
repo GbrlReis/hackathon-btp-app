@@ -13,15 +13,15 @@ export class HomePage {
   }
 
   goToCertificates(){
-  	this.router.navigate(['CertificatesPage']);
+  	this.router.navigate(['/certificates']);
   };
 
   goToTrainings(){
-  	this.router.navigate(['TrainingsPage']);
+  	this.router.navigate(['/trainings']);
   };
 
   goToVideoLessons(){
-    this.router.navigate(['VideoLessonsPage']);
+    this.router.navigate(['/video-lessons']);
   }
 
 }

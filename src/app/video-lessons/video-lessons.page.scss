@@ -1,0 +1,156 @@
+.video-lessons-content {
+  color: #546575;
+}
+
+#progress {
+  margin-left: -25px;
+  padding-top: 20px;
+}
+
+.progress {
+  height: 250px;
+  margin-top: -15px;
+  background-color: #182837;
+}
+
+.node {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display:inline-block;
+  transition: all 1000ms ease;
+  margin-bottom: -10px;
+  margin-left: -3px;
+  background-color: #6d7e98;
+}
+
+.divider {
+  height: 35px;
+  width: 6px;
+  margin-left: 2px;
+  --webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  border-radius: 20%;
+  transition: all 800ms ease;
+  margin-bottom: -10px;
+  background-color: #2e3f4f;
+}
+
+li p {
+  display:inline-block;
+  margin-left: 10px;
+  font-size: 12px;
+}
+
+li {
+  list-style: none;
+  line-height: 0px;
+}
+
+li.activated .node {
+  background-color: #27eeb5;
+}
+
+li.activated p {
+  color: #27eeb5;
+}
+
+li span	{
+  margin-left: 28px;
+  font-size: 10px;
+}
+
+.menu-header {
+display:flex;
+justify-content: space-around;
+}
+.menu-header ion-icon {
+  font-size: 12px !important;
+}
+
+.center-icon {
+  margin: auto;
+  width: 50px;
+  padding: 10px;
+}
+
+.menu-list {
+  background-color: #f3f5f4; 
+  margin: auto;
+  width: 90%;
+  padding: 10px;
+  margin-top: -30px;
+  --webkit-border-radius: 3%;
+  -moz-border-radius: 3%;
+  border-radius: 3%;
+}
+
+.menu-list ion-icon {
+  margin: 5px;
+  font-size: 36px;
+}
+
+.menu-list ion-item {
+  background-color: white;
+  color: #506576;
+  font-size: 16px;
+}
+
+.label-md {
+  margin: 5px;
+}
+
+ion-label span	{
+  margin-left: 62px;
+  font-size: 10px;
+}
+
+.progress-circle {
+  margin-top: 50px; 
+  margin-left: 25px;
+}
+
+.progress-limit {
+  margin-top: -115px; 
+  margin-left: 35px;
+  font-size: 16px;
+}
+
+.progress-limit span {
+  font-size: 28px;
+  color: #1deaaf;
+}
+
+.progress-limit .label {
+  font-size: 12px;
+  margin-left: -10px;
+}
+
+.progress-limit .total {
+  font-size: 12px;
+  margin-left: 25px;
+  margin-top: 20px;
+}
+
+.progress-limit .total span {
+  font-size: 12px;
+}
+
+div.item {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  color: #546575;
+  div {
+    width: 90%;
+    padding: 10px 0;
+    margin: 10px;
+  };
+  .icon {
+    width: 50px;
+    text-align: center;
+  }
+  .icon span {
+    font-size: 12px;
+  }
+}
