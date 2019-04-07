@@ -5,7 +5,7 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>Treinamentos</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -24,7 +24,7 @@
   	<div class='content'>
 			<strong>Treinamento primeiros socorros</strong>
     	<br><span>Aprenda os procedimentos para utilizar um extintor e realizar primeiros socorros</span>
-    	<br><button ion-button outline>Participar</button>
+    	<br><ion-button expand="block" fill="outline" color="dark">Participar</ion-button>
   	</div>
   </div>
   <hr>
@@ -40,7 +40,8 @@
   	<div class='content'>
 			<strong>Treinamento primeiros socorros</strong>
     	<br><span>Aprenda os procedimentos para utilizar um extintor e realizar primeiros socorros</span>
-    	<br><button ion-button outline [disabled]="true">Inscrito</button>
+    	<br><ion-button expand="block" fill="outline" color="dark" [disabled]="true">Inscritos</ion-button>
+
   	</div>
   </div>
 

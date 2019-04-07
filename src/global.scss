@@ -14,6 +14,15 @@
 	background: #101c28;
 }
 
+.header-md {
+  background: #101c28;
+}
+
+.title-md {
+  color: white;
+  text-align: center;
+}
+
 .back-button {
   color: white;
 }
@@ -26,4 +35,8 @@
 .vertical-hr {
   height: 30px;
   border-left: 2px solid #ecedf1;
+}
+
+.ion-color-primary {
+    --ion-color-base: #101c28 !important;
 }
